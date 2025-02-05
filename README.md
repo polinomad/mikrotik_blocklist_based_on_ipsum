@@ -10,6 +10,7 @@ Of course, anyone who finds this unsuitable can download the Python script and m
 ## Firewall rule needs to be set up
  `/ip firewall filter add action=drop chain=input in-interface-list=WAN src-address-list=ipsum_blacklist comment="Blocking IPs from ipsum blacklist" connection-state=new `
 *Replace the IFNAME with the name you use. (e.g., WAN)
+For the most efficient operation, place the rule at the very beginning of the firewall rules.
 
 
 ## Install
