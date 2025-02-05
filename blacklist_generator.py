@@ -29,10 +29,10 @@ for i in range(len(ips)):
             output += f"{{ \"{ip}\" }};\n"
 
 
-output += "};\n:foreach ip in=$ips do={\n\t/ip firewall address-list add list=blacklist address=$ip\n}"
+output += "};\n:foreach ip in=$ips do={\n\t/ip firewall address-list add list=ipsum_blacklist address=$ip\n}"
 
 # Replace with your preferred save location
-with open("blacklist.rsc", "w") as file:
+with open("ipsum_blacklist.rsc", "w") as file:
     file.write(output)
 
 print(output)
