@@ -8,7 +8,7 @@ The weekly update and the Level 3 list are perfectly suitable for me. Level 3 ha
 Of course, anyone who finds this unsuitable can download the Python script and modify it to their liking.
 
 ## Firewall rule needs to be set up
- `/ip firewall filter add chain=input action=drop connection-state=new src-address-list=ipsum_blacklist in-interface=IFNAME `
+ `/ip firewall filter add action=drop chain=input in-interface-list=IFNAME src-address-list=ipsum_blacklist comment="Blocking IPs from ipsum blacklist" `
 *Replace the IFNAME with the name you use. (e.g., WAN)
 
 
