@@ -15,7 +15,7 @@ For greater efficiency, it is recommended to place the following rule before the
  `/ip firewall filter add action=drop chain=input comment="drop invalid" connection-state=invalid `
 
 I would rather recommend this instead of the filter list, unless using the filter list is specifically the goal.
- `i/ip firewall raw add action=drop chain=prerouting src-address-list=ipsum_blacklist `
+ `/ip firewall raw add action=drop chain=prerouting src-address-list=ipsum_blacklist `
 This is beneficial because:
 - The raw table rules + (prerouting) take effect at the earliest point, even before packets are processed by any other firewall or routing rules. Thus, CPU load is minimized.
 - Dropping unwanted traffic at an early stage can increase network security, as malicious packets cannot reach deeper levels of defense.
