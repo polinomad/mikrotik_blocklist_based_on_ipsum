@@ -7,17 +7,6 @@ The script was primarily created for myself, but I thought I'd publish it so tha
 The weekly update and the Level 3 list are perfectly suitable for me. Level 3 has enough feedback to ensure that false positive IP addresses are minimized.
 Of course, anyone who finds this unsuitable can download the Python script and modify it to their liking.
 
-## Firewall rule needs to be set up
-``` 
-/ip firewall filter add action=drop chain=input in-interface-list=WAN src-address-list=ipsum_blacklist comment="Blocking IPs from ipsum blacklist" connection-state=new
-```
-*Replace the IFNAME with the name you use. (e.g., WAN)
-For the most efficient operation, place the rule at the very beginning of the firewall rules.
-For greater efficiency, it is recommended to place the following rule before the IP filtering rule.
-```
-/ip firewall filter add action=drop chain=input comment="drop invalid" connection-state=invalid
-```
-
 I would rather recommend this instead of the filter list, unless using the filter list is specifically the goal.
 ```
 /ip firewall raw add action=drop chain=prerouting src-address-list=ipsum_blacklist
